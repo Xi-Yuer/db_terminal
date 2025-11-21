@@ -22,7 +22,7 @@ pub async fn run(
     loop {
         // 检查是否需要渲染
         let should_redraw =
-            needs_redraw || last_redraw.elapsed() > std::time::Duration::from_millis(60); // FPS
+            needs_redraw || last_redraw.elapsed() > std::time::Duration::from_secs_f64(1.0 / 60.0); // FPS
         if should_redraw {
             terminal.draw(|f| draw_ui(f, &app_state))?;
             needs_redraw = false;
