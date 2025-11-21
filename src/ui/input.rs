@@ -51,7 +51,7 @@ pub fn draw_input(f: &mut Frame, area: Rect, app_state: &AppState) {
                     let after = &line[cursor_col.min(line.len())..];
                     result.push(Line::from(vec![
                         Span::styled(before, Style::default().fg(Color::White)),
-                        Span::styled("█", Style::default().fg(Color::Yellow).bg(Color::DarkGray)),
+                        Span::styled("|", Style::default().fg(Color::Yellow).bg(Color::DarkGray)),
                         Span::styled(after, Style::default().fg(Color::White)),
                     ]));
                 } else {
@@ -66,7 +66,7 @@ pub fn draw_input(f: &mut Frame, area: Rect, app_state: &AppState) {
             // 单行处理：简单情况
             vec![Line::from(vec![
                 Span::styled(before_cursor, Style::default().fg(Color::White)),
-                Span::styled("█", Style::default().fg(Color::Yellow).bg(Color::DarkGray)),
+                Span::styled("|", Style::default().fg(Color::Yellow).bg(Color::DarkGray)),
                 Span::styled(after_cursor, Style::default().fg(Color::White)),
             ])]
         };
