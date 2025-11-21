@@ -14,7 +14,7 @@ async fn main() -> anyhow::Result<()> {
     let terminal = init()?;
 
     // 连接数据库（请修改为你的 MySQL 连接字符串）
-    let database_url = "mysql://root:2214380963Wx!!@localhost:3306/test";
+    let database_url = "mysql://root:password@localhost:3306/test";
     let db = match db::Database::connect(database_url).await {
         Ok(db) => db,
         Err(e) => {
